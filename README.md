@@ -1,2 +1,3 @@
 # Projet-Web
-Projet de P2
+Projet Web de P2
+Societe de Transit International 
