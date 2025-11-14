@@ -1,0 +1,137 @@
+/* Navbar.css - Improved with better shadows, transitions, and mobile menu readiness */
+
+.navbar {
+  width: 100%;
+  padding: 16px 60px;
+  background-color: #022B36;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  padding: 12px 60px;
+  background-color: rgba(2, 43, 54, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-light,
+.btn-outline {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-light {
+  background-color: white;
+  color: #022B36;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-outline {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: #022B36;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE - Basic mobile hamburger (expand if needed with state) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .nav-links {
+    display: none; /* Hide on mobile, add hamburger logic if needed */
+  }
+
+  .nav-buttons {
+    gap: 10px;
+  }
+
+  .btn-light,
+  .btn-outline {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+}

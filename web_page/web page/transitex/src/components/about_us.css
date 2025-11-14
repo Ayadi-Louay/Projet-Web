@@ -1,0 +1,77 @@
+/* ----------------------------- about_us.css ----------------------------- */
+
+:root{
+  --teal: #0f4a4a;
+  --gold: #cfa55a;
+  --muted: #6b6b6b;
+  --bg: #ffffff;
+  --max-width: 1100px;
+}
+
+/* Basic reset and layout */
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:#102028}
+.about-page{background:var(--bg)}
+.container{max-width:var(--max-width); margin:0 auto; padding:40px 20px}
+
+/* Header */
+.site-header{background:var(--teal); color:#fff}
+.header-inner{display:flex; align-items:center; justify-content:space-between; max-width:var(--max-width); margin:0 auto; padding:18px 20px}
+.logo{height:48px}
+.main-nav{display:flex; gap:22px; align-items:center}
+.main-nav a{color:#fff; text-decoration:none; font-weight:500}
+.help-btn{background:transparent; border:2px solid rgba(255,255,255,0.12); color:#fff; padding:6px 10px; border-radius:6px}
+
+/* Hero */
+.hero{height:180px; background-image:url('../assets/plane.jpg'); background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center}
+.hero-overlay{width:100%; height:100%; background:rgba(255,255,255,0.65); display:flex; align-items:center; justify-content:center}
+.hero h1{font-size:34px; letter-spacing:1px; color:#0f4a4a; margin:0}
+
+.section-title{font-size:28px; margin:0 0 12px 0}
+.gold{color:var(--gold)}
+.lead{color:var(--muted); line-height:1.6}
+.vision{font-style:italic; background:#fafafa; padding:18px; border-left:4px solid var(--gold); margin-top:18px}
+
+/* Mission two-column */
+.mission{display:grid; grid-template-columns:1fr 340px; gap:24px; align-items:center}
+.mission-img{width:100%; border-radius:12px; border:6px solid #fff; box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+.commitment{font-weight:600; margin-top:18px}
+.bullets{margin:12px 0 0 18px}
+.bullets li{margin-bottom:8px}
+
+/* Values table */
+.values-table-wrap{margin-top:18px}
+.values-table{width:100%; border-collapse:collapse; border:1px solid #dcdcdc}
+.values-table th, .values-table td{padding:20px; border:1px solid #e6e6e6; text-align:left}
+.values-table thead th{background:#fff}
+.value-name{font-weight:700; width:200px}
+
+/* Founders */
+.founders{background:transparent}
+.founder-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:28px; margin-top:24px; align-items:start}
+.founder-card{background:var(--teal); color:#fff; padding:24px; text-align:center; border-radius:10px}
+.founder-photo-wrap{width:120px; height:120px; margin:0 auto 12px; border-radius:50%; border:6px solid var(--gold); display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff}
+.founder-photo{width:100%; height:100%; object-fit:cover}
+.role{font-weight:700; margin:8px 0}
+.founder-desc{font-size:14px; color:rgba(255,255,255,0.85)}
+
+/* Why & Growth */
+.why{padding-top:6px}
+.growth{margin-top:18px}
+
+/* Footer */
+.site-footer{background:var(--teal); color:#fff; padding:20px 0; margin-top:40px}
+.footer-inner{max-width:var(--max-width); margin:0 auto; padding:0 20px}
+
+/* Responsive adjustments */
+@media (max-width:900px){
+  .mission{grid-template-columns:1fr}
+  .hero{height:140px}
+  .hero h1{font-size:26px}
+}
+
+@media (max-width:520px){
+  .header-inner{flex-direction:column; gap:12px}
+  .main-nav{flex-wrap:wrap; gap:12px}
+  .founder-photo-wrap{width:100px; height:100px}
+}

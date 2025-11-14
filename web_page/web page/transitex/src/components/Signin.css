@@ -1,0 +1,131 @@
+.signin-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.signin-container {
+  max-width: 450px;
+  margin: 60px auto;
+  padding: 45px 35px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(145deg, #ffffff, #f1f3f6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.signin-container h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  color: #222;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input {
+  padding: 14px 18px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background-color: #fdfdfd;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.error {
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.btn-submit {
+  padding: 15px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(90deg, #0056b3, #003f7f);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 91, 179, 0.3);
+}
+
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.options-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+.forgot-password {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+.auth-footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #000000;
+  text-align: center;
+  opacity: 0.9;
+}
+
+@media (max-width: 500px) {
+  .signin-container {
+    padding: 35px 20px;
+    margin: 30px 10px;
+  }
+  
+  .options-row {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+}
