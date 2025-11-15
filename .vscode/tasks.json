@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "start",
+			"path": "web_page/web page/transitex",
+			"problemMatcher": [],
+			"label": "npm: start - web_page/web page/transitex",
+			"detail": "react-scripts start",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

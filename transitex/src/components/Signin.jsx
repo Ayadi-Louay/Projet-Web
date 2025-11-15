@@ -5,7 +5,6 @@
         const [formData, setFormData] = useState({
           email: "",
           password: "",
-          remember: false
         });
 
         const [errors, setErrors] = useState({});
@@ -18,10 +17,10 @@
         }, []);
 
         const handleChange = (e) => {
-          const { name, value, type, checked } = e.target;
+          const { name, value } = e.target;
           setFormData({
             ...formData,
-            [name]: type === "checkbox" ? checked : value,
+            [name]: value,
           });
           setErrors({ ...errors, [name]: "" });
         };
@@ -50,53 +49,51 @@
         };
 
         return (
-          <div>
+          <div className="signin-page-wrapper">
             <div className="signin-container">
-              <h2>Sign In</h2>
-
-              <form onSubmit={handleSubmit} className="signin-form">
-                <div className="input-group">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                  {errors.email && <span className="error">{errors.email}</span>}
+              <div className="signin-left">
+                <div className="welcome-text">
+                  <h1>Welcome</h1>
+                  <h1>Back</h1>
                 </div>
+              </div>
 
-                <div className="input-group">
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                  />
-                  {errors.password && <span className="error">{errors.password}</span>}
-                </div>
+              <div className="signin-right">
+                <h2>Sign in to Transitex</h2>
 
-                <div className="options-row">
-                  <label className="remember-me">
+                <form onSubmit={handleSubmit} className="signin-form">
+                  <div className="input-group">
+                    <label>User ID or e-mail:</label>
                     <input
-                      type="checkbox"
-                      name="remember"
-                      checked={formData.remember}
+                      type="email"
+                      name="email"
+                      value={formData.email}
                       onChange={handleChange}
                     />
-                    Remember me
-                  </label>
+                    {errors.email && <span className="error">{errors.email}</span>}
+                  </div>
 
-                  <span className="forgot-password" onClick={handleForgotPassword}>
-                    Forgot Password?
-                  </span>
-                </div>
+                  <div className="input-group">
+                    <label>Password:</label>
+                    <input
+                      type="password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                    />
+                    {errors.password && <span className="error">{errors.password}</span>}
+                  </div>
 
-                <button type="submit" className="btn-submit">
-                  Sign In
-                </button>
-              </form>
+                  <div className="buttons-row">
+                    <button type="submit" className="btn-login">
+                      Login
+                    </button>
+                    <button type="button" className="btn-forgot" onClick={handleForgotPassword}>
+                      forgotten password
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         );
