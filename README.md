@@ -1,12 +1,12 @@
 # Transitex - Transport and Logistics Platform
 
-## 📋 Project Description
+##  Project Description
 
 Transitex is a modern web application developed to showcase transport and logistics services. The project offers a professional and intuitive user interface allowing users to discover services, register, and log into the platform.
 
 ---
 
-## 🚀 Framework Choice
+##  Framework Choice
 
 ### React.js with Create React App
 
@@ -26,7 +26,7 @@ We chose **React.js** as the main framework for this project for the following r
 
 ---
 
-## ✨ Developed Features
+##  Developed Features
 
 ### 1. **Home Page (Hero Section)**
 - Attractive visual presentation of Transitex
@@ -96,7 +96,7 @@ We chose **React.js** as the main framework for this project for the following r
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **Frontend Framework**: React.js 18
 - **Language**: JavaScript (JSX)
@@ -107,7 +107,7 @@ We chose **React.js** as the main framework for this project for the following r
 
 ---
 
-## 📦 Project Structure
+##  Project Structure
 
 ```
 Projet-Web/
@@ -140,7 +140,7 @@ Projet-Web/
 
 ---
 
-## 🚀 Project Launch Steps
+##  Project Launch Steps
 
 ### Prerequisites
 
@@ -195,7 +195,7 @@ This command will create a `build/` folder containing optimized files ready for 
 
 ---
 
-## 🧪 Available Scripts
+##  Available Scripts
 
 ### `npm start`
 Launches the application in development mode at http://localhost:3000
@@ -207,11 +207,11 @@ Launches tests in interactive mode
 Creates an optimized production version in the `build/` folder
 
 ### `npm run eject`
-**⚠️ Irreversible operation** - Exposes Webpack configuration for advanced customization
+** Irreversible operation** - Exposes Webpack configuration for advanced customization
 
 ---
 
-## 🎨 Visual Features
+##  Visual Features
 
 - **Color Palette**:
   - Gold (#d4af37) for main titles
@@ -232,7 +232,7 @@ Creates an optimized production version in the `build/` folder
 
 ---
 
-## 👥 Contributors
+##  Contributors
 
 - **Ayadi Louay** - 
 - **Farhat Zenim** -
@@ -240,13 +240,13 @@ Creates an optimized production version in the `build/` folder
 
 ---
 
-## 📝 License
+##  License
 
 This project is developed as part of an academic project at SUPCOM.
 
 ---
 
-## 📞 Contact
+##  Contact
 
 For any questions or suggestions regarding the project, feel free to contact the development team.
 
