@@ -14,6 +14,10 @@ export default function Navbar() {
     navigate("/signin"); // redirige vers la page Sign In
   };
 
+  const handleProfileClick = () => {
+    navigate("/Profile"); // redirige vers la page Profile
+  }
+
   return (
     <header className="navbar">
       <div className="navbar-left">
@@ -29,7 +33,7 @@ export default function Navbar() {
       </nav>
 
       <div className="nav-buttons">
-        <button className="btn-light">Profile</button>
+        <button className="btn-light" onClick={handleProfileClick}>Profile</button>
         <button className="btn-light" onClick={handleSignInClick}>
           Sign in
         </button>

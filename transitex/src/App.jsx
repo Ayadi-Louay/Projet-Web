@@ -9,6 +9,7 @@ import AirTransport from "./components/AirTransport";
 import AboutUs from "./components/about_us";
 import Register from "./components/Register";
 import SignIn from "./components/Signin";
+import Profile from "./components/Profile";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about_us" element={<AboutUs />} />
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
         <Footer />
       </div>

@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #f0f9ff, #e0f2fe);
+  color: #222;
+}
+
+/* 🧭 NAVBAR */
+header {
+  background-color: #002b5b;
+  color: white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar li a:hover {
+  color: #00bfff;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #002b5b;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .navbar.open {
+    max-height: 300px;
+    padding: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* 🌊 SECTION INFO */
+.ship-info {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ship-info h1 {
+  text-align: center;
+  color: #002b5b;
+  font-size: 2rem;
+}
+
+.ship-info ul {
+  margin-top: 10px;
+  padding-left: 25px;
+}
+
+/* 📦 BOOKING FORM */
+.booking-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-section h2 {
+  color: #002b5b;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+fieldset {
+  border: 2px solid #002b5b;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+legend {
+  color: #002b5b;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  border-color: #00bfff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 191, 255, 0.4);
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #002b5b;
+}
+
+span {
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: bold;
+  color: #002b5b;
+}
+
+button[type="submit"] {
+  background-color: #002b5b;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #00bfff;
+}
+
+/* 🦶 FOOTER */
+footer {
+  text-align: center;
+  background-color: #002b5b;
+  color: white;
+  padding: 15px;
+  margin-top: 50px;
+}

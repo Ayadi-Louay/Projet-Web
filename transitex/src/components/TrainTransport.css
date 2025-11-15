@@ -1,0 +1,94 @@
+.train-transport-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+.train-info {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.train-info h1 {
+  color: #022B36;
+  margin-bottom: 16px;
+}
+
+.train-info ul {
+  margin-top: 16px;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.booking-section {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.booking-section h2 {
+  color: #022B36;
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-form fieldset {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.booking-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 500;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.booking-form input[type="range"] {
+  width: 100%;
+}
+
+.booking-form span {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.booking-form button {
+  padding: 12px 20px;
+  background: #022B36;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.booking-form button:hover {
+  background: #004d66;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+}

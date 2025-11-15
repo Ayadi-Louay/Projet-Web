@@ -1,7 +1,7 @@
-// about_us.jsx
-// Place this file in your React project (e.g. src/components/about_us.jsx)
-// Make sure to put the images referenced below in /public/assets/ or update the paths.
-// Usage: import AboutUs from "./components/about_us" and use <AboutUs /> in your app.
+import mission from "../assets/mission.png";
+import userPlaceholder from "../assets/user-placeholder.jpg";
+import mahdi from "../assets/mahdi.png";
+import farhat from "../assets/farhat.png";
 
 import React from "react";
 import "./about_us.css";
@@ -42,7 +42,7 @@ export default function AboutUs() {
         </div>
 
         <div className="mission-right">
-          <img src="/assets/mission.png" alt="Mission" className="mission-img" />
+          <img src={mission} alt="Mission" className="mission-img" />
         </div>
       </section>
 
@@ -85,7 +85,7 @@ export default function AboutUs() {
         <div className="founder-grid">
           <article className="founder-card">
             <div className="founder-photo-wrap">
-              <img src="/assets/founder1.jpg" alt="Louay Ayadi" className="founder-photo" />
+              <img src={userPlaceholder} alt="Louay Ayadi" className="founder-photo" />
             </div>
             <h3>Louay Ayadi</h3>
             <p className="role">Co-Founder &amp; CEO</p>
@@ -94,7 +94,7 @@ export default function AboutUs() {
 
           <article className="founder-card">
             <div className="founder-photo-wrap">
-              <img src="/assets/founder2.jpg" alt="Mahdi Fakhfakh" className="founder-photo" />
+              <img src={mahdi} alt="Mahdi Fakhfakh" className="founder-photo" />
             </div>
             <h3>Mahdi Fakhfakh</h3>
             <p className="role">Co-Founder &amp; COO</p>
@@ -103,7 +103,7 @@ export default function AboutUs() {
 
           <article className="founder-card">
             <div className="founder-photo-wrap">
-              <img src="/assets/founder3.jpg" alt="Farhat Zenim" className="founder-photo" />
+              <img src={farhat} alt="Farhat Zenim" className="founder-photo" />
             </div>
             <h3>Farhat Zenim</h3>
             <p className="role">Co-Founder &amp; CTO</p>
@@ -123,7 +123,7 @@ export default function AboutUs() {
         </ul>
 
         <div className="growth">
-          <h3 className="gold">Our Growth Ambition</h3>
+          <h2 className="gold">Our Growth Ambition</h2>
           <p>We aim to position Transitex as a major logistics enabler in North Africa by:</p>
           <ul className="bullets">
             <li>Expanding our regional partner network</li>
