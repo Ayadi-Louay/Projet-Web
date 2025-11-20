@@ -10,6 +10,8 @@ import AboutUs from "./components/about_us";
 import Register from "./components/Register";
 import SignIn from "./components/Signin";
 import Profile from "./components/Profile";
+import ShipTransport from "./components/ShipTransport";
+import TrainTransport from "./components/TrainTransport";
 import "./App.css";
 
 function App() {
