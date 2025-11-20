@@ -21,6 +21,8 @@ function App() {
           <Route path="/" element={<><Hero /><WhyTransitex /></>} />
           <Route path="/transport" element={<Transport />} />
           <Route path="/airtransport" element={<AirTransport />} />
+          <Route path="/ship" element={<ShipTransport />} />
+          <Route path="/train" element={<TrainTransport />} />
           <Route path="/about_us" element={<AboutUs />} />
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<SignIn />} />
