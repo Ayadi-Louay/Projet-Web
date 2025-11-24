@@ -75,22 +75,25 @@ body {
 
 /* Info section */
 .air-transport-info {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.air-transport-info h1 {
   text-align: center;
-  padding: 60px 20px;
+  color: #002b5b;
+  font-size: 2rem;
 }
 
 .air-transport-info ul {
-  list-style-position: inside;
-  margin: 20px auto 0;
-  padding: 0;
-  max-width: 600px;
-  text-align: center;
+  margin-top: 10px;
+  padding-left: 25px;
 }
 
-.air-transport-info ul li {
-  margin: 10px 0;
-  line-height: 1.6;
-}
 
 /* Booking section */
 .booking-section {
