@@ -5,23 +5,24 @@
 }
 
 .train-info {
-  background: #f8f9fa;
-  padding: 40px;
-  border-radius: 12px;
-  margin-bottom: 40px;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .train-info h1 {
-  color: #022B36;
-  margin-bottom: 16px;
+  text-align: center;
+  color: #002b5b;
+  font-size: 2rem;
 }
 
 .train-info ul {
-  margin-top: 16px;
-  list-style-type: disc;
-  padding-left: 20px;
+  margin-top: 10px;
+  padding-left: 25px;
 }
-
 .booking-section {
   background: #fff;
   padding: 40px;
