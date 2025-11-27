@@ -1,7 +1,9 @@
 .transport-page {
   text-align: center;
   padding: 60px 20px;
-  background-color: #f8f9fa;
+  background-color: #eaf0f7;
+  position: sticky;
+  
 }
 
 .transport-page header h1 {
