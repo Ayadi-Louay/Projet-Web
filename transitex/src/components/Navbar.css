@@ -1,8 +1,18 @@
-/* Navbar.css - Improved with better shadows, transitions, and mobile menu readiness */
-
+/* Navbar.css */
+/* GENERAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+/* NAVBAR */
 .navbar {
   width: 100%;
-  padding: 16px 60px;
+  padding: clamp(12px, 4vw, 16px) clamp(20px, 8vw, 60px);
   background-color: #022B36;
   display: flex;
   align-items: center;
@@ -14,40 +24,37 @@
   z-index: 1000;
   transition: all 0.3s ease;
 }
-
 .navbar.scrolled {
-  padding: 12px 60px;
+  padding: clamp(10px, 3vw, 12px) clamp(20px, 8vw, 60px);
   background-color: rgba(2, 43, 54, 0.95);
   backdrop-filter: blur(10px);
 }
-
+/* LOGO */
 .logo {
-  width: 80px;
-  height: 80px;
+  width: clamp(60px, 12vw, 80px);
+  height: clamp(60px, 12vw, 80px);
   border-radius: 50%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-
 .logo:hover {
   transform: scale(1.05);
 }
-
+/* NAV LINKS */
 .nav-links {
   display: flex;
-  gap: 40px;
+  gap: clamp(15px, 6vw, 40px);
   list-style: none;
 }
-
 .nav-links a {
   text-decoration: none;
   color: white;
   font-weight: 500;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  font-size: clamp(12px, 2.5vw, 16px);
   position: relative;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
-
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -58,80 +65,181 @@
   background-color: #fff;
   transition: width 0.3s ease;
 }
-
 .nav-links a:hover::after {
   width: 100%;
 }
-
 .nav-links a:hover {
   opacity: 0.8;
   transform: translateY(-1px);
 }
-
+/* NAV BUTTONS */
 .nav-buttons {
   display: flex;
-  gap: 16px;
+  gap: clamp(8px, 2vw, 16px);
   align-items: center;
 }
-
-.btn-light,
-.btn-outline {
-  padding: 10px 24px;
-  font-size: 14px;
+.btn-light, .btn-outline {
+  padding: clamp(6px, 1.5vw, 10px) clamp(12px, 3vw, 24px);
+  font-size: clamp(11px, 2vw, 14px);
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
-
+/* LIGHT BUTTON */
 .btn-light {
   background-color: white;
   color: #022B36;
   border: none;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-
 .btn-light:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-
+/* OUTLINE BUTTON */
 .btn-outline {
   border: 2px solid white;
   background: transparent;
   color: white;
 }
-
 .btn-outline:hover {
   background-color: white;
   color: #022B36;
   transform: translateY(-2px);
 }
 
-/* RESPONSIVE - Basic mobile hamburger (expand if needed with state) */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 12px 20px;
-  }
+/* HAMBURGER MENU ICON */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: clamp(20px, 4vw, 25px);
+  height: clamp(20px, 4vw, 25px);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+.hamburger span {
+  width: 100%;
+  height: clamp(2px, 0.5vw, 3px);
+  background-color: white;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  transform-origin: 1px;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
 
+/* MOBILE MENU */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #022B36;
+  padding: clamp(15px, 4vw, 20px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: clamp(15px, 3vw, 20px);
+}
+.mobile-nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(14px, 3vw, 16px);
+  padding: clamp(12px, 3vw, 15px) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.mobile-nav-links a:hover {
+  opacity: 0.8;
+  padding-left: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.mobile-nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 2vw, 10px);
+}
+.mobile-nav-buttons .btn-light,
+.mobile-nav-buttons .btn-outline {
+  width: 100%;
+  padding: clamp(10px, 2.5vw, 12px);
+  font-size: clamp(12px, 2.5vw, 14px);
+  text-align: center;
+}
+
+/* RESPONSIVE - TABLET AND BELOW */
+@media (max-width: 1024px) {
   .nav-links {
-    display: none; /* Hide on mobile, add hamburger logic if needed */
+    gap: clamp(20px, 4vw, 30px);
   }
-
+  .nav-links a {
+    font-size: clamp(11px, 2.2vw, 14px);
+  }
   .nav-buttons {
-    gap: 10px;
+    gap: clamp(6px, 1.5vw, 12px);
   }
-
-  .btn-light,
-  .btn-outline {
-    padding: 8px 16px;
-    font-size: 12px;
+  .btn-light, .btn-outline {
+    padding: clamp(5px, 1.2vw, 8px) clamp(10px, 2.5vw, 20px);
+    font-size: clamp(10px, 1.8vw, 13px);
   }
+}
 
+/* RESPONSIVE - MOBILE */
+@media (max-width: 890px){
+  .navbar {
+    padding: clamp(10px, 3vw, 12px) clamp(15px, 5vw, 20px);
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-buttons {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .mobile-menu {
+    display: block;
+  }
   .logo {
-    width: 60px;
-    height: 60px;
+    width: clamp(50px, 10vw, 60px);
+    height: clamp(50px, 10vw, 60px);
+  }
+}
+
+/* Additional scaling for very small screens */
+@media (max-width: 480px) {
+  .mobile-nav-links a {
+    font-size: clamp(13px, 4vw, 14px);
+    padding: clamp(10px, 2.5vw, 12px) 0;
+  }
+  .mobile-nav-buttons .btn-light,
+  .mobile-nav-buttons .btn-outline {
+    padding: clamp(8px, 2vw, 10px);
+    font-size: clamp(11px, 2.2vw, 12px);
   }
 }
