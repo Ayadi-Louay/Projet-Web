@@ -11,67 +11,8 @@ body {
   color: #333;
 }
 
-/* Navbar */
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #022B36;
-  padding: 16px 40px;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
 
-.navbar-container .logo {
-  font-size: 24px;
-  font-weight: bold;
-}
 
-.navbar-container .menu-toggle {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.navbar {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-.navbar li a {
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.navbar li a:hover {
-  opacity: 0.8;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .navbar-container .menu-toggle {
-    display: block;
-  }
-
-  .navbar {
-    flex-direction: column;
-    display: none;
-    gap: 10px;
-    background-color: #022B36;
-    padding: 10px;
-  }
-
-  .navbar.open {
-    display: flex;
-  }
-}
 
 /* Info section */
 .air-transport-info {
