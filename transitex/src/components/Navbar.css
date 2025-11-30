@@ -78,6 +78,15 @@ body {
   gap: clamp(8px, 2vw, 16px);
   align-items: center;
 }
+
+.user-name {
+  color: white;
+  font-size: clamp(12px, 2vw, 14px);
+  font-weight: 500;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
 .btn-light, .btn-outline {
   padding: clamp(6px, 1.5vw, 10px) clamp(12px, 3vw, 24px);
   font-size: clamp(11px, 2vw, 14px);

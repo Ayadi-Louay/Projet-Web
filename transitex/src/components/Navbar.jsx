@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "./Navbar.css";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const { user, isAuthenticated, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleNavigation = (path, e) => {
     if (e) e.preventDefault();
     navigate(path);
     setIsMenuOpen(false); // Close mobile menu on navigation
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+    setIsMenuOpen(false);
   };
 
   return (
@@ -28,15 +36,26 @@ export default function Navbar() {
       </nav>
       
       <div className="nav-buttons">
-        <button className="btn-light" onClick={(e) => handleNavigation("/Profile", e)}>
-          Profile
-        </button>
-        <button className="btn-light" onClick={(e) => handleNavigation("/signin", e)}>
-          Sign in
-        </button>
-        <button className="btn-outline" onClick={(e) => handleNavigation("/register", e)}>
-          Register
-        </button>
+        {isAuthenticated() ? (
+          <>
+            <span className="user-name">Hello, {user?.fullName}</span>
+            <button className="btn-light" onClick={(e) => handleNavigation("/Profile", e)}>
+              Profile
+            </button>
+            <button className="btn-outline" onClick={handleLogout}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <button className="btn-light" onClick={(e) => handleNavigation("/signin", e)}>
+              Sign in
+            </button>
+            <button className="btn-outline" onClick={(e) => handleNavigation("/register", e)}>
+              Register
+            </button>
+          </>
+        )}
       </div>
 
       {/* Hamburger Menu Icon */}
@@ -60,15 +79,26 @@ export default function Navbar() {
             <a href="/about_us" onClick={(e) => handleNavigation("/about_us", e)}>About us</a>
           </nav>
           <div className="mobile-nav-buttons">
-            <button className="btn-light" onClick={(e) => handleNavigation("/Profile", e)}>
-              Profile
-            </button>
-            <button className="btn-light" onClick={(e) => handleNavigation("/signin", e)}>
-              Sign in
-            </button>
-            <button className="btn-outline" onClick={(e) => handleNavigation("/register", e)}>
-              Register
-            </button>
+            {isAuthenticated() ? (
+              <>
+                <span className="user-name">Hello, {user?.fullName}</span>
+                <button className="btn-light" onClick={(e) => handleNavigation("/Profile", e)}>
+                  Profile
+                </button>
+                <button className="btn-outline" onClick={handleLogout}>
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <button className="btn-light" onClick={(e) => handleNavigation("/signin", e)}>
+                  Sign in
+                </button>
+                <button className="btn-outline" onClick={(e) => handleNavigation("/register", e)}>
+                  Register
+                </button>
+              </>
+            )}
           </div>
         </div>
       )}

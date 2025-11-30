@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -10,6 +12,7 @@ export default function Register() {
   });
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,14 +30,39 @@ export default function Register() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-    } else {
-      alert("Registration successful!");
-      console.log(formData);
+      return;
+    }
+
+    setLoading(true);
+    setErrors({});
+
+    try {
+      const response = await fetch("http://localhost:3001/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Redirection directe sans alert
+        navigate("/signin");
+      } else {
+        setErrors({ general: data.message || "Registration failed" });
+      }
+    } catch (error) {
+      setErrors({ general: "Network error. Please try again." });
+      console.error("Registration error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -48,6 +76,9 @@ export default function Register() {
         <div className="register-left">
           <h2>Sign up</h2>
           <form onSubmit={handleSubmit} className="register-form">
+            {errors.general && (
+              <div className="error general-error">{errors.general}</div>
+            )}
             <div className="input-group">
               <input
                 type="text"
@@ -94,8 +125,8 @@ export default function Register() {
               )}
             </div>
 
-            <button type="submit" className="btn-submit">
-              Sign up
+            <button type="submit" className="btn-submit" disabled={loading}>
+              {loading ? "Signing up..." : "Sign up"}
             </button>
           </form>
         </div>

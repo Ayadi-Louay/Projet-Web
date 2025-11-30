@@ -1,13 +1,18 @@
       import React, { useEffect, useState } from "react";
+      import { useNavigate } from "react-router-dom";
+      import { useAuth } from "../context/AuthContext";
       import "./Signin.css";
 
       export default function SignIn() {
+        const navigate = useNavigate();
+        const { login } = useAuth();
         const [formData, setFormData] = useState({
           email: "",
           password: "",
         });
 
         const [errors, setErrors] = useState({});
+        const [loading, setLoading] = useState(false);
 
         useEffect(() => {
           document.body.classList.add("signin-page");
@@ -33,14 +38,42 @@
           return newErrors;
         };
 
-        const handleSubmit = (e) => {
+        const handleSubmit = async (e) => {
           e.preventDefault();
           const validationErrors = validate();
           if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors);
-          } else {
-            alert("Sign In successful!");
-            console.log(formData);
+            return;
+          }
+
+          setLoading(true);
+          setErrors({});
+
+          try {
+            const response = await fetch("http://localhost:3001/api/auth/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+              // Utiliser la fonction login du contexte
+              login(data.data.user, data.data.token);
+              
+              // Redirection directe sans alert
+              navigate("/");
+            } else {
+              setErrors({ general: data.message || "Sign in failed" });
+            }
+          } catch (error) {
+            setErrors({ general: "Network error. Please try again." });
+            console.error("Sign in error:", error);
+          } finally {
+            setLoading(false);
           }
         };
 
@@ -62,6 +95,9 @@
                 <h2>Sign in to Transitex</h2>
 
                 <form onSubmit={handleSubmit} className="signin-form">
+                  {errors.general && (
+                    <div className="error general-error">{errors.general}</div>
+                  )}
                   <div className="input-group">
                     <label>User ID or e-mail:</label>
                     <input
@@ -85,8 +121,8 @@
                   </div>
 
                   <div className="buttons-row">
-                    <button type="submit" className="btn-login">
-                      Login
+                    <button type="submit" className="btn-login" disabled={loading}>
+                      {loading ? "Signing in..." : "Login"}
                     </button>
                     <button type="button" className="btn-forgot" onClick={handleForgotPassword}>
                       forgotten password
