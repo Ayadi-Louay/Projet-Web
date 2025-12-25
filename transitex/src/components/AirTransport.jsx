@@ -58,13 +58,26 @@ const AirTransport = () => {
   };
 
   // Soumission du formulaire
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
     e.preventDefault();
-    if (!sourceAirport || !destinationAirport) {
+    
+    if (sourceAirport && destinationAirport) {
+      // Préparer les données de réservation pour l'aérien
+      const reservationData = {
+        type: "Air Freight", // Pour différencier dans la page de paiement
+        weight: weight,
+        deliveryTime: deliveryTime,
+        selectedDeparture: sourceAirport,
+        selectedDestination: destinationAirport,
+        price: parseFloat(price),
+        departureDate: document.getElementById("dispatch-date")?.value || new Date().toISOString().split('T')[0]
+      };
+      
+      // Rediriger vers la page de paiement avec les données
+      navigate("/payment", { state: { reservationData } });
+    } else {
       alert("Please select both source and destination airports.");
-      return;
     }
-    navigate("/payment");
   };
 
   return (
@@ -79,7 +92,7 @@ const AirTransport = () => {
         <div className="cloud cloud-6"></div>
         <div className="cloud cloud-7"></div>
         <div className="cloud cloud-8"></div>
-
+        <div className="cloud cloud-9"></div>
       </div>
 
       {/* Main Content */}
@@ -162,6 +175,8 @@ const AirTransport = () => {
                       </svg>
                       <span className="label-text">Source Airport</span>
                     </label>
+                    <br></br>
+                    <br />
                     <select
                       id="source-airport"
                       required
@@ -188,6 +203,8 @@ const AirTransport = () => {
                       </svg>
                       <span className="label-text">Destination Airport</span>
                     </label>
+                    <br />
+                    <br />
                     <select
                       id="destination-airport"
                       required
@@ -213,6 +230,8 @@ const AirTransport = () => {
                       </svg>
                       <span className="label-text">Date of Dispatch</span>
                     </label>
+                    <br />
+                    <br />
                     <input 
                       id="dispatch-date"
                       type="date" 

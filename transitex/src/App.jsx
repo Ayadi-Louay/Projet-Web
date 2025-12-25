@@ -17,7 +17,7 @@ import TrainTransport from "./components/TrainTransport";
 import Help from "./components/help";
 import Tracking from "./components/tracking";
 
-
+import Payment from "./components/Payment";
 import "./App.css";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
           <Routes>
             
          
-
+            <Route path="/payment" element={<Payment />} />
             <Route path="/" element={<><Hero /><WhyTransitex /></>} />
             <Route path="/transport" element={<Transport />} />
             <Route path="/tracking" element={<Tracking />} />
