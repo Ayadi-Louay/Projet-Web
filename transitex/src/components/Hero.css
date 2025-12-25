@@ -85,7 +85,7 @@
   backdrop-filter: blur(10px);
   border-radius: 15px;
   border-left: 5px solid var(--primary-color);
-  animation: fadeIn 1s ease-out;
+  animation: fadeIn 2s ease-out;
 }
 
 @keyframes fadeIn {
