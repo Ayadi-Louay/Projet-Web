@@ -1,0 +1,129 @@
+/* src/components/tracking.css */
+.tracking-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+/* Hero dynamique */
+.tracking-hero {
+  height: 300px;
+  background-image: url('../assets/ship.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tracking-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(2,43,54,0.6), rgba(0,150,136,0.6));
+  animation: gradientMove 15s ease infinite;
+  z-index: 0;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.tracking-hero-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+/* Formulaire */
+.tracking-box {
+  display: flex;
+  gap: 10px;
+  background: rgba(255,255,255,0.2);
+  padding: 15px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+.tracking-box input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+}
+.tracking-box input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+.tracking-box button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #ffd700;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.tracking-box button:hover {
+  transform: scale(1.05);
+}
+
+/* Contenu */
+.tracking-content {
+  padding: 30px 20px;
+  flex: 1;
+  max-width: 800px;
+  margin: auto;
+}
+.hint {
+  text-align: center;
+  color: #555;
+  font-size: 16px;
+}
+.alert.error {
+  color: #9b2c2c;
+  background: #fdecea;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Result */
+.result-wrap {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.result-wrap h2 {
+  margin-bottom: 8px;
+  color: #006666;
+}
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+.timeline-item {
+  padding: 6px 0;
+  border-bottom: 1px dashed #ccc;
+}
+.result-wrap button {
+  margin-top: 12px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #022b36;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width:768px) {
+  .tracking-box { flex-direction: column; align-items: stretch; }
+  .tracking-box input { font-size: 16px; padding: 12px; }
+  .tracking-box button { width: 100%; }
+  .tracking-hero { height: 220px; }
+}

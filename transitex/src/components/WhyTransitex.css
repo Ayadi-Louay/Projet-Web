@@ -1,0 +1,332 @@
+/* WhyTransitex.css - Styles dédiés pour la section Why Transitex */
+
+.why-container {
+  padding: 120px 80px;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fond décoratif avec dégradé */
+.why-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, rgba(2, 43, 54, 0.05) 0%, rgba(0, 77, 102, 0.05) 100%);
+  border-radius: 50%;
+  transform: translate(40%, -40%);
+  z-index: 0;
+}
+
+.why-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, rgba(2, 43, 54, 0.05) 0%, rgba(0, 77, 102, 0.05) 100%);
+  border-radius: 50%;
+  transform: translate(-40%, 40%);
+  z-index: 0;
+}
+
+/* Titre de section */
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 70px;
+  color: #022B36;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.5px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+  border-radius: 3px;
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+/* Grille des avantages */
+.why-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 50px;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Carte d'avantage */
+.why-item {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  padding: 40px 35px;
+  background: #ffffff;
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid rgba(2, 43, 54, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  min-height: 240px;
+}
+
+.why-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #022B36 0%, #004d66 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.why-item > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Effet au survol */
+.why-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 102, 204, 0.2);
+  border-color: transparent;
+}
+
+.why-item:hover::before {
+  opacity: 1;
+}
+
+/* Conteneur d'icône */
+.icon-container {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 170, 255, 0.1));
+  transition: all 0.4s ease;
+}
+
+.why-item:hover .icon-container {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Style des icônes SVG */
+.icon {
+  width: 40px;
+  height: 40px;
+  transition: all 0.4s ease;
+  stroke: #0066cc;
+}
+
+.why-item:hover .icon {
+  stroke: white;
+  transform: scale(1.2);
+}
+
+/* Contenu texte */
+.why-item-content {
+  flex: 1;
+}
+
+.why-item h4 {
+  font-size: 1.6rem;
+  color: #022B36;
+  margin-bottom: 15px;
+  font-weight: 700;
+  transition: color 0.4s ease;
+}
+
+.why-item:hover h4 {
+  color: white;
+}
+
+.why-item p {
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  transition: color 0.4s ease;
+}
+
+.why-item:hover p {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Animation d'entrée */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.why-item {
+  animation: slideInUp 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.why-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.why-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.why-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Indicateur de bordure animé */
+.why-item::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #0066cc, #00aaff, #0066cc);
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.why-item:hover::after {
+  opacity: 1;
+  animation: borderRotate 3s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .why-list {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .why-container {
+    padding: 90px 60px;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .why-list {
+    gap: 35px;
+  }
+  
+  .why-item {
+    padding: 35px 30px;
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-container {
+    padding: 70px 40px;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+  }
+  
+  .why-list {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    gap: 30px;
+  }
+  
+  .why-item {
+    padding: 30px 25px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    min-height: auto;
+  }
+  
+  .icon-container {
+    margin-bottom: 20px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .why-item h4 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-container {
+    padding: 60px 25px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .why-item {
+    padding: 25px 20px;
+  }
+  
+  .icon-container {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .why-item h4 {
+    font-size: 1.3rem;
+  }
+  
+  .why-item p {
+    font-size: 1rem;
+  }
+}

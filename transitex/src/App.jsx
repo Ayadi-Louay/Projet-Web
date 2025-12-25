@@ -14,6 +14,10 @@ import SignIn from "./components/Signin";
 import Profile from "./components/Profile";
 import ShipTransport from "./components/ShipTransport";
 import TrainTransport from "./components/TrainTransport";
+import Help from "./components/help";
+import Tracking from "./components/tracking";
+
+
 import "./App.css";
 
 function App() {
@@ -23,11 +27,16 @@ function App() {
         <div className="App">
           <Navbar />
           <Routes>
+            
+         
+
             <Route path="/" element={<><Hero /><WhyTransitex /></>} />
             <Route path="/transport" element={<Transport />} />
+            <Route path="/tracking" element={<Tracking />} />
             <Route path="/airtransport" element={<AirTransport />} />
             <Route path="/ship" element={<ShipTransport />} />
             <Route path="/train" element={<TrainTransport />} />
+            <Route path="/Help" element={<Help />} />
             <Route path="/about_us" element={<AboutUs />} />
             <Route path="/register" element={<Register />} />
             <Route path="/signin" element={<SignIn />} />

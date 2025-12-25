@@ -12,7 +12,32 @@ export default function Navbar() {
   const handleNavigation = (path, e) => {
     if (e) e.preventDefault();
     navigate(path);
-    setIsMenuOpen(false); // Close mobile menu on navigation
+    setIsMenuOpen(false);
+  };
+
+  // Fonction spécifique pour la réservation
+  const handleReservation = (e) => {
+    e.preventDefault();
+    
+    // Utiliser directement isAuthenticated() du contexte
+    if (isAuthenticated()) {
+      navigate("/reservation");
+    } else {
+      navigate("/signin");
+    }
+    setIsMenuOpen(false);
+  };
+
+  // Fonction spécifique pour Profile
+  const handleProfile = (e) => {
+    e.preventDefault();
+    
+    if (isAuthenticated()) {
+      navigate("/Profile");
+    } else {
+      navigate("/signin");
+    }
+    setIsMenuOpen(false);
   };
 
   const handleLogout = () => {
@@ -30,7 +55,7 @@ export default function Navbar() {
       <nav className="nav-links">
         <a href="/" onClick={(e) => handleNavigation("/", e)}>Home</a>
         <a href="/transport" onClick={(e) => handleNavigation("/transport", e)}>Transport</a>
-        <a href="/reservation" onClick={(e) => handleNavigation("/reservation", e)}>Reservation</a>
+        <a href="/reservation" onClick={handleReservation}>Reservation</a>
         <a href="/tracking" onClick={(e) => handleNavigation("/tracking", e)}>Tracking</a>
         <a href="/about_us" onClick={(e) => handleNavigation("/about_us", e)}>About us</a>
       </nav>
@@ -39,7 +64,7 @@ export default function Navbar() {
         {isAuthenticated() ? (
           <>
             <span className="user-name">Hello, {user?.fullName}</span>
-            <button className="btn-light" onClick={(e) => handleNavigation("/Profile", e)}>
+            <button className="btn-light" onClick={handleProfile}>
               Profile
             </button>
             <button className="btn-outline" onClick={handleLogout}>
@@ -74,7 +99,7 @@ export default function Navbar() {
           <nav className="mobile-nav-links">
             <a href="/" onClick={(e) => handleNavigation("/", e)}>Home</a>
             <a href="/transport" onClick={(e) => handleNavigation("/transport", e)}>Transport</a>
-            <a href="/reservation" onClick={(e) => handleNavigation("/reservation", e)}>Reservation</a>
+            <a href="/reservation" onClick={handleReservation}>Reservation</a>
             <a href="/tracking" onClick={(e) => handleNavigation("/tracking", e)}>Tracking</a>
             <a href="/about_us" onClick={(e) => handleNavigation("/about_us", e)}>About us</a>
           </nav>
@@ -82,7 +107,7 @@ export default function Navbar() {
             {isAuthenticated() ? (
               <>
                 <span className="user-name">Hello, {user?.fullName}</span>
-                <button className="btn-light" onClick={(e) => handleNavigation("/Profile", e)}>
+                <button className="btn-light" onClick={handleProfile}>
                   Profile
                 </button>
                 <button className="btn-outline" onClick={handleLogout}>

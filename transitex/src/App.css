@@ -255,3 +255,14 @@ body {
     font-size: 14px;
   }
 }
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+footer {
+  flex-shrink: 0; /* Empêche le footer de se rétrécir */
+}
