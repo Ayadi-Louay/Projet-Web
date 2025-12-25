@@ -16,7 +16,7 @@ import ShipTransport from "./components/ShipTransport";
 import TrainTransport from "./components/TrainTransport";
 import Help from "./components/help";
 import Tracking from "./components/tracking";
-
+import Reservation from "./components/reservation";
 import Payment from "./components/Payment";
 import "./App.css";
 
@@ -27,8 +27,8 @@ function App() {
         <div className="App">
           <Navbar />
           <Routes>
-            
-         
+            <Route path="/reservation" element={<Reservation />} />
+          
             <Route path="/payment" element={<Payment />} />
             <Route path="/" element={<><Hero /><WhyTransitex /></>} />
             <Route path="/transport" element={<Transport />} />

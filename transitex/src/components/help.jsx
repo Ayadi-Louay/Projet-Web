@@ -37,16 +37,18 @@ export default function Help() {
           <h2>Contactez-nous</h2>
           <form>
             <div className="form-group">
-              <input type="text" required />
-              <label>Nom</label>
+              
+              <input type="text" required placeholder="Entrez votre nom" />
             </div>
             <div className="form-group">
-              <input type="email" required />
-              <label>Email</label>
+            
+              <input type="email" required placeholder="Votre email"/>
+              
             </div>
             <div className="form-group">
-              <textarea required></textarea>
-              <label>Votre message</label>
+              
+              <textarea required placeholder="Entrez votre message ici..."></textarea>
+              
             </div>
             <button type="submit">Envoyer</button>
           </form>
