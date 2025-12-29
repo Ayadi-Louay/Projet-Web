@@ -1,7 +1,7 @@
 // Reservation.jsx
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./reservation.css";
+import "./Reservation.css";
 
 const Reservation = () => {
   const navigate = useNavigate();

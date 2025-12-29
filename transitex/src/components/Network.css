@@ -1,0 +1,127 @@
+/* ===== Network hero (titre + texte à gauche, image à droite) ===== */
+.network-hero {
+  padding: 60px 80px;
+  background: #fff;
+}
+
+.network-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+/* Texte (gauche) */
+.network-text {
+  flex: 1 1 55%;
+  min-width: 280px;
+}
+
+.network-title {
+  line-height: 1.05;
+  color: #022B36;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 70px;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.5px;
+}
+.network-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+  border-radius: 3px;
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+.network-desc {
+  color: #445566;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  max-width: 640px;
+}
+
+/* CTA bouton */
+.network-cta {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #0a4ea6; /* bleu pro */
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(10,78,166,0.16);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.network-cta:hover,
+.network-cta:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(10,78,166,0.22);
+  background: #0070d1;
+}
+
+/* Image (droite) */
+.network-image {
+  flex: 0 0 44%;
+  max-width: 520px;
+}
+
+.network-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(2,43,54,0.12);
+  object-fit: cover;
+}
+
+/* petit effet quand on hover la carte entière (optionnel) */
+.network-hero .network-inner:hover .network-image img {
+  transform: translateY(-6px);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive : empilement vertical sur petits écrans */
+@media (max-width: 880px) {
+  .network-inner {
+    flex-direction: column-reverse;
+    gap: 22px;
+    padding: 0 10px;
+  }
+
+  .network-text {
+    text-align: center;
+  }
+
+  .network-title {
+    font-size: 2.1rem;
+  }
+
+  .network-desc {
+    margin: 0 auto 16px auto;
+  }
+
+  .network-image {
+    width: 100%;
+    max-width: 720px;
+  }
+}
+
+/* Ajustement mobile */
+@media (max-width: 480px) {
+  .network-hero { padding: 36px 18px; }
+  .network-title { font-size: 1.8rem; }
+  .network-desc { font-size: 1rem; }
+  .network-cta { padding: 10px 16px; }
+}

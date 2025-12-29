@@ -16,8 +16,9 @@ import ShipTransport from "./components/ShipTransport";
 import TrainTransport from "./components/TrainTransport";
 import Help from "./components/help";
 import Tracking from "./components/tracking";
-import Reservation from "./components/reservation";
+import Reservation from "./components/Reservation";
 import Payment from "./components/Payment";
+import NetworkMAP from "./components/Network-MAP";
 import "./App.css";
 
 function App() {
@@ -28,10 +29,9 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/reservation" element={<Reservation />} />
-          
+            <Route path="/network-map" element={<NetworkMAP />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/" element={<><Hero /><WhyTransitex /></>} />
-            <Route path="/transport" element={<Transport />} />
             <Route path="/tracking" element={<Tracking />} />
             <Route path="/airtransport" element={<AirTransport />} />
             <Route path="/ship" element={<ShipTransport />} />
@@ -45,6 +45,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Profile />
+                </ProtectedRoute>
+              } 
+              />
+            <Route
+              path="/Transport" 
+              element={
+                <ProtectedRoute>
+                  <Transport/>
                 </ProtectedRoute>
               } 
             />

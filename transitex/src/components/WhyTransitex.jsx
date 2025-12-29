@@ -1,6 +1,8 @@
 import React from "react";
 import "./WhyTransitex.css";
 
+import IndustrySectors from "../components/Industrysector";
+import Network from "../components/Network";
 // Import des composants d'icônes SVG
 import GlobeIcon from "../icons/GlobeIcon";
 import ClockIcon from "../icons/ClockIcon";
@@ -41,6 +43,9 @@ export default function WhyTransitex() {
           </div>
         </div>
       </div>
+      <Network/>
+      <IndustrySectors/>
     </section>
+    
   );
 }

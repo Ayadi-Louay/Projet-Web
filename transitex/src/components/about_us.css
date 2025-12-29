@@ -50,7 +50,30 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 /* Why & Growth */
 .why{padding-top:6px}
 .growth{margin-top:18px}
-.growth h2{margin:26px; font-size:26px}
+.growth-title{margin:26px;}
+.growth-title {
+  line-height: 1.05;
+  color: #022B36;
+  font-size:34px;
+  text-align: center;
+  margin-bottom: 70px;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.5px;
+}
+.growth-title::after{
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+  border-radius: 3px;
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
 
 
 /* Responsive adjustments */

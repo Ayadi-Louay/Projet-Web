@@ -113,7 +113,7 @@ export default function AboutUs() {
       </section>
 
       <section className="container why">
-        <h2 className="section-title gold">Why Transitex?</h2>
+        <h2 className="gold section-title">Why Transitex?</h2>
         <ul className="bullets">  
           <li>A local solution tailored to the Tunisian logistics reality</li>
           <li>Combining technology + logistics expertise</li>
@@ -123,7 +123,7 @@ export default function AboutUs() {
         </ul>
 
         <div className="growth">
-          <h2 className="gold">Our Growth Ambition</h2>
+          <h2 className="growth-title">Our Growth Ambition</h2>
           <p>We aim to position Transitex as a major logistics enabler in North Africa by:</p>
           <ul className="bullets">
             <li>Expanding our regional partner network</li>

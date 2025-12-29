@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "./Transport.css";
 
 export default function Transport() {
   const navigate = useNavigate();
+   const { isAuthenticated, loading } = useAuth(); // Si tu utilises le contexte
+
+  // Version avec contexte
+  useEffect(() => {
+    if (!loading && !isAuthenticated()) {
+      navigate("/signin");
+    }
+  }, [loading, isAuthenticated, navigate]);
+
+  // Version simplifiée (comme ton ami)
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/signin");
+    }
+  }, [navigate]);
+
+  // Si en train de charger
+  if (loading) {
+    return <div>Chargement...</div>;
+  }
+
+  // Si non authentifié (double sécurité)
+  const token = localStorage.getItem("token");
+  if (!token) {
+    return null; // ou rediriger
+  }
 
   return (
     <div className="transport-page">
